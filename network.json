@@ -1,0 +1,17 @@
+{
+  "name": "Anubis Mainnet",
+  "theGraphNetworkIdentifier": "anubis",
+  "type": "mainnet",
+  "protocol": "ethereum",
+  "chainId": 6714,
+  "chainIdCaip2": "eip155:6714",
+  "nativeCurrency": "gasDAI",
+  "rpc": "https://rpc.anubispace.org",
+  "explorer": "https://anubisscan.io",
+  "theGraphDocs": "https://thegraph.com/docs/en/supported-networks/anubis/",
+  "notes": [
+    "Subgraph Studio testing/staging is not available for Anubis; publish to The Graph Network or test with a local Graph Node.",
+    "Use network identifier exactly: anubis",
+    "Only public on-chain data can be indexed; shielded transactions are not visible to Subgraphs."
+  ]
+}

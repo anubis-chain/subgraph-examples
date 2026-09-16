@@ -1,0 +1,10 @@
+"""Indexed ERC-20 Transfer events on Anubis (public on-chain data only)."""
+type Transfer @entity(immutable: true) {
+  id: ID!
+  from: Bytes!
+  to: Bytes!
+  value: BigInt!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

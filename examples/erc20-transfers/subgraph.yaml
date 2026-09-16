@@ -1,0 +1,27 @@
+specVersion: 1.2.0
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Token
+    network: anubis
+    source:
+      # Replace with a real Anubis contract that emits ERC-20 Transfer events.
+      # Example system DAI (verify on https://anubisscan.io/ before relying on it):
+      address: "0x83fd06F0846d9D90B3016bF670Efe2E0B11cDe14"
+      abi: ERC20
+      # Set to the contract's deployment block on Anubis mainnet (do not leave at 0 in production).
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
