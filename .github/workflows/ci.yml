@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate examples
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check network identifier and required files
+        run: |
+          set -euo pipefail
+          test -f network.json
+          test -f LICENSE
+          test -f examples/erc20-transfers/subgraph.yaml
+          test -f examples/erc20-transfers/schema.graphql
+          test -f examples/erc20-transfers/src/mapping.ts
+          grep -q '"theGraphNetworkIdentifier": "anubis"' network.json
+          grep -q 'network: anubis' examples/erc20-transfers/subgraph.yaml
+          grep -q 'anubisscan.io' README.md
+          if grep -R -n 'browser.anubispace.org' --include='*.md' --include='*.json' --include='*.yaml' .; then
+            echo "Old explorer URL must not appear" >&2
+            exit 1
+          fi
