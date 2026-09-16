@@ -1,6 +1,6 @@
 # Anubis Subgraph Examples
 
-English-only starter material for indexing **Anubis Chain** with [The Graph](https://thegraph.com/).
+Starter material for indexing **Anubis Chain** with [The Graph](https://thegraph.com/).
 
 Anubis is supported on The Graph Network. Official network guide:
 
