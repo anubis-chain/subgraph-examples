@@ -1,15 +1,17 @@
 # Anubis Subgraph Examples
 
 > [!IMPORTANT]
-> This repository is archived and kept as a historical example. Start new projects from [anubis-chain/subgraph-starter](https://github.com/anubis-chain/subgraph-starter), which receives current Anubis network and tooling updates.
+> This repository was archived on 2026-09-17 and is kept as a historical example. Start new projects from [anubis-chain/subgraph-starter](https://github.com/anubis-chain/subgraph-starter), which receives current Anubis network and tooling updates.
 
-Starter material for indexing **Anubis Chain** with [The Graph](https://thegraph.com/).
+Historical starter material for indexing **Anubis Chain** with [The Graph](https://thegraph.com/).
 
-Anubis is supported on The Graph Network. Official network guide:
+At the time of archive, Anubis was supported on The Graph Network. Current official network guide:
 
 **[The Graph · Anubis Mainnet](https://thegraph.com/docs/en/supported-networks/anubis/)**
 
 ## Network parameters
+
+These values are an archived snapshot. Confirm current values in the maintained [subgraph starter](https://github.com/anubis-chain/subgraph-starter) and official network guide before deploying.
 
 | Item | Value |
 | --- | --- |
@@ -38,9 +40,9 @@ A Subgraph listens to public smart-contract events on Anubis, stores structured 
 
 **Selective privacy:** only data that is public on-chain can be indexed. Events from transparent transactions are indexable; data inside shielded (PLONK ZK) transactions is not.
 
-## Studio limitation (important)
+## Studio status at archive time
 
-Anubis is on The Graph Network but **does not currently have Subgraph Studio testing/staging**. Do not expect the Studio playground path. Options:
+As of 2026-09-17, Anubis was on The Graph Network but **did not have Subgraph Studio testing/staging**. The available options were:
 
 - Validate with a **local Graph Node** pointed at `anubis:https://rpc.anubispace.org`
 - Or **`graph publish`** directly to The Graph Network (Indexers that support Anubis pick it up; curation signal helps)
@@ -52,7 +54,7 @@ npm install -g @graphprotocol/graph-cli@latest
 graph --version
 ```
 
-Initialize against your own contract (recommended for real apps):
+Historical initialization reference (use the maintained starter for active projects):
 
 ```sh
 graph init
@@ -83,13 +85,6 @@ graph publish
 | Path | Description |
 | --- | --- |
 | [`examples/erc20-transfers`](./examples/erc20-transfers) | Minimal ERC-20 `Transfer` indexer template for `network: anubis` |
-
-## Related Anubis links
-
-- Explorer: https://anubisscan.io/
-- Faucet (testnet): https://anubisfaucets.com / source: [anubis-faucet](https://github.com/anubis-chain/anubis-faucet)
-- Multisig dapp: https://guardsafe.org/
-- DEX: https://rocketswap.org/
 
 ## License
 
