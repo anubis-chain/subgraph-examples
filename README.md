@@ -1,5 +1,8 @@
 # Anubis Subgraph Examples
 
+> [!IMPORTANT]
+> This repository is archived and kept as a historical example. Start new projects from [anubis-chain/subgraph-starter](https://github.com/anubis-chain/subgraph-starter), which receives current Anubis network and tooling updates.
+
 Starter material for indexing **Anubis Chain** with [The Graph](https://thegraph.com/).
 
 Anubis is supported on The Graph Network. Official network guide:
